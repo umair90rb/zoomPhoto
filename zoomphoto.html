@@ -1,0 +1,36 @@
+<html>
+	<head>
+	<title></title>
+	
+	<style>
+	/* required/necessary otherwise img zoom but not at same place under the img */
+	.zoom {
+			display:inline-block;
+			position: relative;
+		}
+	</style>
+	
+	</head>
+	<body>
+	<!-- span is necessary and zoom class is also required. Javascript work on span id -->
+	<span id="ex1" class="zoom"><img src="1.jpg" width="400px" height="400"></span>
+	<span id="ex2" class="zoom"><img src="2.jpg" width="400px" height="400"></span>
+	<span id="ex3" class="zoom"><img src="3.jpg" width="400px" height="400"></span>
+	<span id="ex4" class="zoom"><img src="5.jpg" width="400px" height="400"></span>
+	
+	
+	
+	<script rel="text/javascript" src="jquery.js"></script>
+	<script rel="text/javascript" src="jquery.zoom.js"></script>
+	<script>
+		
+		$(document).ready(function(){
+			$('#ex1').zoom(); /* hover zoom */
+			$('#ex2').zoom({ on:'grab' }); /* grab zoom/when mouse clicked */
+			$('#ex3').zoom({ on:'click' });	/* where click that point zoom */
+			$('#ex4').zoom({ on:'toggle' }); /* first click zoom second click normal */
+		});
+		
+	</script>
+	</body>
+</html>
